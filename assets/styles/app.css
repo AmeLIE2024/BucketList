@@ -1,3 +1,15 @@
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgba(198, 196, 192, 0.58);
+    color: rgba(43, 48, 46, 0.84);
+}
+
+.content-wrapper {
+    flex: 1 0 auto;
 }

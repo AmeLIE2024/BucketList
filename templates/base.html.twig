@@ -12,6 +12,15 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include 'partials/header.html.twig' %}
+
+        {% block body %}
+            <div class="content">
+                <!-- Votre header, navigation, et le contenu principal vont ici -->
+                <!-- ... -->
+            </div>
+        {% endblock %}
+
+        {% include 'partials/footer.html.twig' %}
     </body>
 </html>
