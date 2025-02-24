@@ -12,21 +12,27 @@
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                        <a href="#" class="nav-link text-secondary">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
+                        <a href="{{ path('app_main') }}" class="nav-link text-secondary">
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#Home"/></svg>
                             Home
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-warning">
-                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
-                            Dashboard
+                        <a href="{{ path('app_main_test') }}" class="nav-link text-warning">
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#test"/></svg>
+                            Test
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link text-warning">
+                        <a href="{{ path('souhait_list') }}" class="nav-link text-warning">
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"/></svg>
+                            Souhaits
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('souhait_create') }}" class="nav-link text-warning">
                             <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"/></svg>
-                            Nouveau rêve
+                            Créer un souhait
                         </a>
                     </li>
                     <li>

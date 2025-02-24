@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!{% endblock %}
+
+{% block body %}
+    <h1>Page de tests divers et variés</h1>
+    <div>
+        {# Créer une variable #}
+        {% set name = "Raphaël" %}
+        <h2>{{ name }}</h2>
+        {# mettre en majuscule #}
+        <h2>{{ name | upper}}</h2>
+        {# afficher la longueur de la chaine de caractères #}
+        <h2>{{ name | length}}</h2>
+
+    </div>
+    <div>
+        {# Créer un tableau #}
+        {%  set colors = ['blue', 'yellow', 'green', 'turquoise'] %}
+        {% for color in colors %}
+        <div style="background-color: {{ color }}">{{ color }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {# Créer un tableau + appliquer des filtres (length, join etc) et afficher l'index de l'itération avec loop#}
+        {%  set colors = ['blue', 'yellow', 'green', 'turquoise'] %}
+        <p> nombre de couleur : {{ colors | length }}</p>
+        <p>{{ colors | join(' / ') }}</p>
+        {% for color in colors %}
+            <div>{{ loop.last }}</div>
+            <div style="background-color: {{ color }}">{{ color }}</div>
+        {% endfor %}
+    </div>
+    <div>
+        {# Formater une date #}
+        <p>{{ "+1year" | date('Y') }}</p>
+    </div>
+    <div>
+        {#  Créer un objet #}
+        {% set book = {
+            title: 'La vie rêvée de Raphaël',
+            year: 2025,
+            author: 'Amélie CAILLET'
+        } %}
+        {# Afficher tous les composants de l'objet avec une boucle for #}
+        <h3>{{ book.author }}</h3>
+        <div>
+            {%  for key, val in book %}
+                <div>{{ key }} : {{ val }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+<div>{{ mySerie.title }} | {{ autreVar }}</div>
+
+
+{% endblock %}

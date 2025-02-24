@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Modifier un souhait | {{ parent() }}
+{% endblock %}
+{% block body %}
+    <h1>Modifier un souhait</h1>
+    <div>
+        {{ form_start(souhaitForm) }}
+        {{ form_widget(souhaitForm) }}
+        <button class="btn btn-primary btn-warning">Modifier</button>
+        {{ form_end(souhaitForm) }}
+    </div>
+{% endblock %}

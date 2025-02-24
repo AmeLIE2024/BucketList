@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Les souhaits | {{ parent() }}
+{% endblock %}
+{% block body %}
+    <h1>Liste de souhaits</h1>
+    <table class="table-responsive-sm table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">Titre</th>
+            <th scope="col">Date de création</th>
+            <th scope="col">Publié</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for souhait in souhaits %}
+            <tr>
+                <td>{{ souhait.name }}</td>
+                <td>{{ souhait.createdAt | date('d/m/Y') }}</td>
+                <td>{{ souhait.isPublished ? "X" : "" }}</td>
+                <td>
+                    <a href="{{ path('souhait_detail', {'id': souhait.id}) }}" title="Détail du souhait">
+                        Détail
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ path('souhait_update', {'id': souhait.id}) }}" title="Modifier le souhait">
+                        Modifier
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune donnée dans la base</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
